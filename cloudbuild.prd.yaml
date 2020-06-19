@@ -1,12 +1,12 @@
 steps:
   - id: "Instalando.."
     name: "gcr.io/cloud-builders/go"
-    args: ["install", "app"]
+    args: ["install", "hpa"]
     env: ["GOPATH=./go"]
 
   - id: "Testando..."
     name: "gcr.io/cloud-builders/go"
-    args: ["test", "app"]
+    args: ["test", "hpa"]
     env: ["GOPATH=./go"]
 
   - id: "Building image from Dockerfile"
@@ -35,4 +35,3 @@ steps:
     env:
     - 'CLOUDSDK_COMPUTE_ZONE=us-central1-c'
     - 'CLOUDSDK_CONTAINER_CLUSTER=cluster-docker-go'
-    
